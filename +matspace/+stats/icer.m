@@ -168,7 +168,7 @@ if nargout > 4
     num = length(cost);
     % build a name list if not given
     if isempty(names)
-        names = "Strategy " + string(1:num);
+        names = string('Strategy ') + string(1:num);
     end
     names = names(:);
     % preallocate some variables

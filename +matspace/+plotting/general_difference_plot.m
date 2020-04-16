@@ -75,7 +75,7 @@ function [fig_hand, err] = general_difference_plot(description, time_one, time_t
 %     show_extra     = true;
 %     second_y_scale = nan;
 %     y_label        = 'Value [rad]';
-%     truth_name     = "Truth";
+%     truth_name     = string('Truth');
 %     truth_time     = [];
 %     truth_data     = [];
 %     tolerance      = 0;
@@ -145,7 +145,7 @@ addParameter(p, 'LegendLoc', 'Best', @ischar);
 addParameter(p, 'ShowExtra', true, @islogical);
 addParameter(p, 'SecondYScale', nan, fun_is_num_or_cell);
 addParameter(p, 'YLabel', '', @ischar);
-addParameter(p, 'TruthName', "Truth", fun_is_cellstr);
+addParameter(p, 'TruthName', string('Truth'), fun_is_cellstr);
 addParameter(p, 'TruthTime', [], fun_is_time);
 addParameter(p, 'TruthData', [], @isnumeric);
 addParameter(p, 'Tolerance', 0, fun_is_duration);
@@ -199,7 +199,7 @@ rms_pts2 = min([rms_xmax max([max(time_one) max(time_two)])]);
 num_channels = length(elements);
 if num_channels == 0
     num_channels = max([size(data_one,1), size(data_two,1)]);
-    elements = "Channel " + (1:num_channels);
+    elements = string('Channel ') + (1:num_channels);
 end
 if isempty(colororder)
     temp_colors = hsv(num_channels);

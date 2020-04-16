@@ -57,7 +57,7 @@ classdef test_general_quaternion_plot < matlab.unittest.TestCase %#ok<*PROP>
             self.show_rms        = true;
             self.legend_loc      = 'Best';
             self.show_extra      = true;
-            self.truth_name      = "Truth";
+            self.truth_name      = string('Truth');
             self.truth_time      = [];
             self.truth_data      = [];
             self.tolerance       = 0;

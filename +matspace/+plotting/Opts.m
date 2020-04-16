@@ -122,7 +122,7 @@ classdef Opts
             OPTS.colormap  = '';
             OPTS.leg_spot  = 'best';
             OPTS.classify  = '';
-            OPTS.names     = "";
+            OPTS.names     = string('');
 
             % get the fields from the overrides and store them to OPTS
             if ~isempty(overrides)

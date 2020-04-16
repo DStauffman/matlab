@@ -34,7 +34,7 @@ function [folders] = pathset(location, exclude)
 %     7.  Updated by David C. Stauffer in April 2020 to put into a package.
 
 %% hard-coded exclusions
-exclusions = ["\.git", "\.svn", "\mex\make", "/.git", "/.svn", "/mex/make"];
+exclusions = string({'\.git', '\.svn', '\mex\make', '/.git', '/.svn', '/mex/make'});
 
 %% use specified path, or path of function itself
 switch nargin
@@ -67,7 +67,9 @@ folders(strlength(folders) == 0) = [];
 folders(contains(folders, exclusions)) = [];
 
 %% add the paths
-addpath(folders.join(pathsep));
+for i = 1:length(folders)
+    addpath(folders{i});
+end
 
 %% display status
 disp('PATHSET:');

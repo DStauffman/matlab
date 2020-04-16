@@ -85,7 +85,7 @@ addParameter(p, 'Description', '', @ischar);
 addParameter(p, 'Type', 'unity', @ischar);
 addParameter(p, 'TruthTime', [], fun_is_time);
 addParameter(p, 'TruthData', [], @isnumeric);
-addParameter(p, 'TruthName', "Truth", @isstring);
+addParameter(p, 'TruthName', string('Truth'), @isstring);
 addParameter(p, 'SecondYScale', nan, @isnumeric); % TODO: put into OPTS?
 addParameter(p, 'PlotSigmas', 1, @isnumeric); % TODO: put into OPTS?
 % do parse

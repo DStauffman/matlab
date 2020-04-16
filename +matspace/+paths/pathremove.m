@@ -31,7 +31,7 @@ function pathremove(location, exclude)
 %     5.  Updated by David C. Stauffer in April 2020 to put into a package.
 
 %% hard-coded exclusions
-exclusions = ["\.git", "\.svn", "\mex\make", "/.git", "/.svn", "/mex/make"];
+exclusions = string({'\.git', '\.svn', '\mex\make', '/.git', '/.svn', '/mex/make'});
 
 %% use specified path, or path of function itself
 switch nargin
@@ -61,7 +61,9 @@ remove = intersect(established, folders);
 
 %% remove the folders and display results
 if ~isempty(remove)
-    rmpath(folders.join(pathsep));
+    for i = 1:length(folders)
+        rmpath(folders{i});
+    end
     disp('DESCOPED:');
     disp(remove);
 end

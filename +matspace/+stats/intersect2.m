@@ -85,7 +85,7 @@ if all_dates
     B = datenum(B);
 end
 % find larger max of A or B, must call max three times to support up to 3D matrices A and B
-maxAorB = max(max(abs(A), [], 'all'), max(abs(B), [], 'all'));
+maxAorB = max(max(max(max(abs(A)))), max(max(max(abs(B))))); % TODO: the 'all' option was added in R2018B
 % check if largest component of A and B is too close to the precision floor
 if ~all_int && ((maxAorB/precision) > (0.01/eps))
     warning('matspace:intersectPrecision','This function may have problems if precision gets too small');

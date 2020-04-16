@@ -46,9 +46,9 @@ end
 %% Setup information
 % TODO: clean-up for Matlab R2019B
 temp         = split(function_name, '.');
-temp_path    = join("+" + temp(1:end-1), filesep);
-temp_name    = temp(end) + ".m";
-old_filename = fullfile(package_root, temp_path, temp_name);
+temp_path    = join(string('+') + temp(1:end-1), filesep);
+temp_name    = [temp{end}, '.m'];
+old_filename = fullfile(package_root, temp_path{1}, temp_name);
 new_filename = fullfile(output_dir, temp_name);
 
 % check if the file already exists, and if so don't process it

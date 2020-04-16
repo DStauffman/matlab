@@ -70,7 +70,7 @@ classdef test_general_difference_plot < matlab.unittest.TestCase %#ok<*PROP>
             self.show_extra     = true;
             self.second_y_scale = nan;
             self.y_label        = 'Value [rad]';
-            self.truth_name     = "Truth";
+            self.truth_name     = string('Truth');
             self.truth_time     = [];
             self.truth_data     = [];
             self.tolerance      = 0;
